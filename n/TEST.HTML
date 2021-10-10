@@ -1,0 +1,143 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+    <script language="JavaScript">
+    	window.fullScreen = true;
+        function fullScreen(theURL) {
+            window.open(theURL, '', 'fullscreen=yes, scrollbars=auto');
+        }
+        // End -->
+ function goFullscreen() {
+    // Get the element that we want to take into fullscreen mode
+    var element = document.documentElement;
+
+    // These function will not exist in the browsers that don't support fullscreen mode yet, 
+    // so we'll have to check to see if they're available before calling them.
+
+    if (element.mozRequestFullScreen) {
+      // This is how to go into fullscren mode in Firefox
+      // Note the "moz" prefix, which is short for Mozilla.
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+      // This is how to go into fullscreen mode in Chrome and Safari
+      // Both of those browsers are based on the Webkit project, hence the same prefix.
+      element.webkitRequestFullScreen();
+   }
+   // Hooray, now we're in fullscreen mode!
+  }
+
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+window.onload = goFullscreen();
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+ </script>
+</head>
+
+<body>
+		<div class="video_player"  id="player">A</div>
+		<button onclick="goFullscreen(); return false">Click Me To Go Fullscreen! (For real)</button>
+     <h1 style="text-align: center;">
+        Open In Full Screen
+    </h1>
+    <div style="text-align: center;"><br>
+        <a href="javascript:void(0);" onclick="fullScreen('http://google.com');">
+            Open Full Screen Window
+        </a>
+    </div>
+</body> 
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#myP {
+  background-color: yellow;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h2>Fullscreen with JavaScript</h2>
+<p>Click on the button to open this page in fullscreen mode.</p>
+<button onclick="openFullscreen();">Go Fullscreen Mode</button>
+<button onclick="closeFullscreen();">Close Fullscreen</button>
+<p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
+<p id="myP">I will display the event that was fired!</p>
+
+<script>
+/* Get the element you want displayed in fullscreen */ 
+var elem = document.documentElement;
+
+/* Function to open fullscreen mode */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem = window.top.document.body; //To break out of frame in IE
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Function to close fullscreen mode */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    window.top.document.msExitFullscreen();
+  }
+}
+
+// Events
+var output = document.getElementById("myP");
+document.addEventListener("fullscreenchange", function() {
+  // output.innerHTML = "fullscreenchange event fired!";
+  openFullscreen();
+});
+document.addEventListener("mozfullscreenchange", function() {
+  openFullscreen();
+});
+document.addEventListener("webkitfullscreenchange", function() {
+  openFullscreen();
+document.addEventListener("msfullscreenchange", function() {
+  openFullscreen();
+});
+</script>
+
+<p id="time">Note: Internet Explorer 10 and earlier does not support fullscreen mode.</p>
+
+</body>
+</html>
+
