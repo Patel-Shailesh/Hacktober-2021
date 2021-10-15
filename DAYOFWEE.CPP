@@ -31,8 +31,11 @@ break;
 }
 int mong( int y, int m)
  {
-  if(y%400==0)
-    {y=1;}
+  if(y%100==0)
+    {
+      if(y%400==0)y=1;
+        else y=0;
+     }
     else if(y%4==0)
       {y=1;}
 	else
@@ -58,13 +61,3 @@ void main()
  disp(z);
  getch();
 }
-
-
-
-
-
-
-
-
-
-
