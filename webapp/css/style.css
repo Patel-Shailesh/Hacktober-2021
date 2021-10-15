@@ -1,0 +1,134 @@
+section.heroSec {
+    text-align: center;
+}
+.heroSec{
+	background: linear-gradient(to right, orange, white,green);
+	padding:166px 0px;
+}
+.heroSec h1 .hero1{
+     color:darkblue;
+     font-size:80px;
+}
+.heroSec h1 .hero2{
+     color:black;
+     font-size:80px;
+}
+.heroSec p{
+	color:grey;
+	font-size:20px;
+}
+.heroSec a{
+	color:#fff;
+	border-color:#19d376;
+	background:#19d376;
+}
+.serviceSec{
+	padding:80px 0px;
+}
+.serviceSec a,
+.serviceSec a:hover{
+	background-color:#343a40;
+	border-color:#343a40;
+}
+.feature-1 {
+	padding:60px 10px;
+	background:#f9f9f9;
+	
+}
+.feature-1 h2{
+    margin-top:50px;
+}
+.feature-1 p{
+   font-size:19px;
+}
+.feature-2{
+	padding:60px 0;
+	background-color:white;
+	
+}
+.feature-2 h2{
+    margin-top:50px;
+}
+.feature-2 p{
+   font-size:19px;
+}
+footer p{
+	margin:0;
+}
+.social {
+    margin:0;
+    padding:0;
+}
+.social li{
+	display:inline-block;
+	padding:5px 0;
+	list-style:none;
+	padding: 10px 10px
+
+}
+.social i {
+    font-size: 22px;
+    color: darkseagreen;
+    padding: 10px 10px;
+}
+.pageTitle{
+	padding:50px;
+	background: linear-gradient(to right, orange, white,green); 
+}
+.pageTitle h2{
+	font-size:45px;
+}
+.welcome{
+	padding: 80px
+	background:#f9f9f9;
+}
+.welcome h2{
+	font-size:40px;
+
+}
+.welcome .sep{
+	height:3px;
+	margin:15px 0 20px;
+	width:42%;
+	background:#19d376;
+}
+.ourTeam{
+	padding: 80px 0;
+}
+.ourTeam .desc{
+	padding:0 130px;
+}
+.ourTeam h2{
+   font-size:40px;
+}
+.ourTeam .team{
+    box-shadow: 2px 2px 12px rgab(0,0,0,0.2);
+}
+.ourTeam .team h3{
+   font-size:20px;
+}
+.ourTeam .team h3 small{
+   font-style:italic;
+}
+.contact{
+	padding:60px;
+	background: linear-gradient(to right, skyblue, white,green); 
+}
+.contact h1{
+	font-size: 50px
+	font-color:darkblue;
+}
+.contact-form .sep{
+	height:3px;
+	margin:15px 0 20px;
+	width:55%;
+	background:#19d376;
+}
+.contact-form .address{
+	background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+	box-shadow: 2px 2px 12px rgab(0,0,0,0.2); 
+}
+button.btn.btn-primary.pull-right.bg-dark {
+    border: darkblue;
+    margin-bottom: 10px
+}
